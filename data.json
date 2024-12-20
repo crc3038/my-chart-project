@@ -1,0 +1,68 @@
+[
+    {
+        "timestamp": "12/20/2024 15:24:22",
+        "status": "1",
+        "temperature": 25.0,
+        "humidity": 0.0
+    },
+    {
+        "timestamp": "12/20/2024 15:24:28",
+        "status": "1",
+        "temperature": 24.97,
+        "humidity": 0.0
+    },
+    {
+        "timestamp": "12/20/2024 15:24:33",
+        "status": "1",
+        "temperature": 25.0,
+        "humidity": 0.0
+    },
+    {
+        "timestamp": "12/20/2024 15:24:39",
+        "status": "1",
+        "temperature": 25.01,
+        "humidity": 0.0
+    },
+    {
+        "timestamp": "12/20/2024 15:24:44",
+        "status": "1",
+        "temperature": 25.05,
+        "humidity": 0.0
+    },
+    {
+        "timestamp": "12/20/2024 15:24:50",
+        "status": "1",
+        "temperature": 25.01,
+        "humidity": 0.0
+    },
+    {
+        "timestamp": "12/20/2024 15:24:56",
+        "status": "1",
+        "temperature": 24.95,
+        "humidity": 0.0
+    },
+    {
+        "timestamp": "12/20/2024 15:25:01",
+        "status": "1",
+        "temperature": 24.95,
+        "humidity": 0.0
+    },
+    {
+        "timestamp": "12/20/2024 15:25:07",
+        "status": "1",
+        "temperature": 24.98,
+        "humidity": 0.0
+    },
+    {
+        "timestamp": "12/20/2024 15:25:12",
+        "status": "1",
+        "temperature": 24.98,
+        "humidity": 0.0
+    },
+    {
+        "timestamp": "12/20/2024 15:25:18",
+        "status": "1",
+        "temperature": 24.97,
+        "humidity": 0.0
+    }
+]

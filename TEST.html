@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature and Humidity Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Temperature and Humidity Over Time</h1>
+    <canvas id="myChart" width="400" height="200"></canvas>
+
+    <script>
+        // 使用 fetch 讀取 data.json 資料
+        fetch('data.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // 從資料中提取時間、溫度、濕度
+                const labels = data.map(item => item.timestamp);  // 時間作為 X 軸
+                const temperatureData = data.map(item => item.temperature);  // 溫度數據
+                const humidityData = data.map(item => item.humidity);  // 濕度數據
+
+                const ctx = document.getElementById('myChart').getContext('2d');
+                const myChart = new Chart(ctx, {
+                    type: 'line',  // 設定為折線圖
+                    data: {
+                        labels: labels,  // 時間戳作為 X 軸
+                        datasets: [{
+                            label: 'Temperature',
+                            data: temperatureData,  // 溫度數據
+                            borderColor: 'rgb(75, 192, 192)',  // 溫度折線顏色
+                            fill: false  // 不填充折線下方
+                        }, {
+                            label: 'Humidity',
+                            data: humidityData,  // 濕度數據
+                            borderColor: 'rgb(255, 159, 64)',  // 濕度折線顏色
+                            fill: false  // 不填充折線下方
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            x: {
+                                ticks: {
+                                    maxRotation: 90,
+                                    minRotation: 45
+                                }
+                            },
+                            y: {
+                                beginAtZero: true  // Y軸從 0 開始
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading data:', error);  // 捕獲錯誤
+            });
+    </script>
+</body>
+</html>
